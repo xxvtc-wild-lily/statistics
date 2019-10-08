@@ -18,5 +18,48 @@ public class Students {
 	private Integer stu_memberShipId;
 	private Integer stu_stuNO;
 	private Integer stu_status;
+	public Integer getStu_id() {
+		return stu_id;
+	}
+	public void setStu_id(Integer stu_id) {
+		this.stu_id = stu_id;
+	}
+	public String getStu_cardNO() {
+		return stu_cardNO;
+	}
+	public void setStu_cardNO(String stu_cardNO) {
+		this.stu_cardNO = stu_cardNO;
+	}
+	public String getStu_name() {
+		return stu_name;
+	}
+	public void setStu_name(String stu_name) {
+		this.stu_name = stu_name;
+	}
+	public Integer getStu_sex() {
+		return stu_sex;
+	}
+	public void setStu_sex(Integer stu_sex) {
+		this.stu_sex = stu_sex;
+	}
+	public Integer getStu_memberShipId() {
+		return stu_memberShipId;
+	}
+	public void setStu_memberShipId(Integer stu_memberShipId) {
+		this.stu_memberShipId = stu_memberShipId;
+	}
+	public Integer getStu_stuNO() {
+		return stu_stuNO;
+	}
+	public void setStu_stuNO(Integer stu_stuNO) {
+		this.stu_stuNO = stu_stuNO;
+	}
+	public Integer getStu_status() {
+		return stu_status;
+	}
+	public void setStu_status(Integer stu_status) {
+		this.stu_status = stu_status;
+	}
+	
 	
 }
