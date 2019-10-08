@@ -2,6 +2,7 @@ package com.ysd.statistics.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 public class Statistics {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增
 	private Integer sta_id;
 	private Integer sta_publicPlaceId;
 	private Integer sta_peopleNums;
