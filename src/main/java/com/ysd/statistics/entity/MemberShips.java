@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "memberships")
@@ -16,6 +17,21 @@ public class MemberShips {
 	private String mem_department;
 	private String mem_specialty;
 	private String mem_degree;
+	private String ext1;
+	private Integer ext2;
+	
+	public String getExt1() {
+		return ext1;
+	}
+	public void setExt1(String ext1) {
+		this.ext1 = ext1;
+	}
+	public Integer getExt2() {
+		return ext2;
+	}
+	public void setExt2(Integer ext2) {
+		this.ext2 = ext2;
+	}
 	public Integer getMem_id() {
 		return mem_id;
 	}

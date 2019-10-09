@@ -1,9 +1,13 @@
 package com.ysd.statistics.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,9 +20,19 @@ public class Teachers {
 	private String tea_cardNO;
 	private String tea_name;
 	private Integer tea_sex;
-	private Integer tea_sectionId;
+	/* private Integer tea_sectionId; */
 	private Integer tea_status;
 	private String tea_remark;
+	@ManyToOne(targetEntity=Sections.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="tea_sectionId",referencedColumnName = "sec_id")
+	private Sections sections;
+	
+	public Sections getSections() {
+		return sections;
+	}
+	public void setSections(Sections sections) {
+		this.sections = sections;
+	}
 	public Integer getTea_id() {
 		return tea_id;
 	}
@@ -43,12 +57,12 @@ public class Teachers {
 	public void setTea_sex(Integer tea_sex) {
 		this.tea_sex = tea_sex;
 	}
-	public Integer getTea_sectionId() {
-		return tea_sectionId;
-	}
-	public void setTea_sectionId(Integer tea_sectionId) {
-		this.tea_sectionId = tea_sectionId;
-	}
+
+	/*
+	 * public Integer getTea_sectionId() { return tea_sectionId; } public void
+	 * setTea_sectionId(Integer tea_sectionId) { this.tea_sectionId = tea_sectionId;
+	 * }
+	 */
 	public Integer getTea_status() {
 		return tea_status;
 	}

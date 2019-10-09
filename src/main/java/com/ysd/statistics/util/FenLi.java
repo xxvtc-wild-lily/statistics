@@ -5,13 +5,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-
 @Configuration
-public class CrossOriginUtil {
-	
+public class FenLi {
 	private CorsConfiguration buildConfig() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("http://127.0.0.1:8020");
+        corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
         return corsConfiguration;
@@ -29,5 +27,4 @@ public class CrossOriginUtil {
         source.registerCorsConfiguration("/**", buildConfig());
         return new CorsFilter(source);
     }
-	
 }
