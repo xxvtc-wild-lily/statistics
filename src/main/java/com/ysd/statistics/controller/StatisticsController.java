@@ -25,4 +25,10 @@ public class StatisticsController {
 		return findeCount;
 		
 	}
+	@RequestMapping(value="monthrecord",method = RequestMethod.POST)
+	public Object selectOneMonthRecord() {
+		List<Map<String, Object>> findeOneMonthRecord = consumeLogsservice.findeOneMonthRecord();
+		return findeOneMonthRecord;
+		
+	}
 }
