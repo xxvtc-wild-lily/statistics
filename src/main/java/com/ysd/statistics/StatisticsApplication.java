@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages="com.ysd.statistics.dao")//spring jpa启用注解
 @EntityScan(basePackages = "com.ysd.statistics.entity")
 public class StatisticsApplication {
 

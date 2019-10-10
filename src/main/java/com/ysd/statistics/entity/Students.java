@@ -22,15 +22,7 @@ public class Students {
 	private Integer stu_sex;
 	private Integer stu_stuNO;
 	private Integer stu_status;
-	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="stu_memberShipId",referencedColumnName = "mem_id")
-	private MemberShips memberships;
-	public MemberShips getMemberships() {
-		return memberships;
-	}
-	public void setMemberships(MemberShips memberships) {
-		this.memberships = memberships;
-	}
+	
 	public Integer getStu_id() {
 		return stu_id;
 	}
@@ -67,24 +59,12 @@ public class Students {
 	public void setStu_status(Integer stu_status) {
 		this.stu_status = stu_status;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
 	
-=======
 	@Override
 	public String toString() {
 		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
 				+ stu_sex + ", stu_stuNO=" + stu_stuNO + ", stu_status="
 				+ stu_status + "]";
 	}
->>>>>>> parent of 94c33dd... Revert "修改配置"
-=======
-	@Override
-	public String toString() {
-		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
-				+ stu_sex + ", stu_memberShipId=" + stu_memberShipId + ", stu_stuNO=" + stu_stuNO + ", stu_status="
-				+ stu_status + "]";
-	}
->>>>>>> parent of 338f661... Revert "Merge branch 'GuoLianZheng'"
 	
 }

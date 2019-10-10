@@ -157,24 +157,21 @@ public class StudentsExcelUtil {
 								
 							}
 						}else if (c == 3) {
-<<<<<<< HEAD
-=======
-							// 学生专业信息编号
-							if (cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC) {
-								String stu_memberShipId = String.valueOf(cell.getNumericCellValue());
-								//截取如果length()-2为零了，就说明只有一位数，就直接截取0到1就行
-								students.setStu_memberShipId(Integer.parseInt(stu_memberShipId.substring(0, stu_memberShipId.length() - 2 > 0 ? stu_memberShipId.length() - 2 : 1)));
-							} else {
-								//如果不是纯数字可以直接获得名称
-								students.setStu_memberShipId(Integer.parseInt(cell.getStringCellValue()));
-							}
-						}else if (c == 4) {
->>>>>>> parent of 338f661... Revert "Merge branch 'GuoLianZheng'"
 							// 学生学号
 							if (cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC) {
 								String stu_stuNo = String.valueOf(cell.getNumericCellValue());
 								//截取如果length()-2为零了，就说明只有一位数，就直接截取0到1就行
 								students.setStu_stuNO(Integer.parseInt(stu_stuNo.substring(0, stu_stuNo.length() - 2 > 0 ? stu_stuNo.length() - 2 : 1)));
+							} else {
+								//如果不是纯数字可以直接获得名称
+								students.setStu_stuNO(Integer.parseInt(cell.getStringCellValue()));
+							}
+						}else if (c == 4) {
+							// 学生学号
+							if (cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC) {
+								String stu_status = String.valueOf(cell.getNumericCellValue());
+								//截取如果length()-2为零了，就说明只有一位数，就直接截取0到1就行
+								students.setStu_status(Integer.parseInt(stu_status.substring(0, stu_status.length() - 2 > 0 ? stu_status.length() - 2 : 1)));
 							} else {
 								//如果不是纯数字可以直接获得名称
 								students.setStu_stuNO(Integer.parseInt(cell.getStringCellValue()));
