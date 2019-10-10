@@ -19,5 +19,10 @@ public class ConsumeLogsServiceImpl implements ConsumeLogsService {
 		List<Map<String, Object>> findCount = statisticsmapper.findCount();
 		return findCount;
 	}
+	@Override
+	public List<Map<String, Object>> findeOneMonthRecord() {
+		List<Map<String, Object>> findOneMonthRecord = statisticsmapper.findOneMonthRecord();
+		return findOneMonthRecord;
+	}
 
 }

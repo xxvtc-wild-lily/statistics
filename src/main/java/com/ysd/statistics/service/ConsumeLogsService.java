@@ -13,5 +13,9 @@ public interface ConsumeLogsService {
 	 * @return
 	 */
 	public List<Map<String,Object>> findeCount();
-
+	/**
+	 * 查询上一个月各个场合的的记录
+	 * @return
+	 */
+	public List<Map<String,Object>> findeOneMonthRecord();
 }
