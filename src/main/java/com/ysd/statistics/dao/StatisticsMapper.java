@@ -34,5 +34,7 @@ public interface StatisticsMapper extends JpaRepository<PublicPlace,Integer>{
 	 * (date_add(CURDATE(),interval -1 month))) and st.sta_month =(select month
 	 * (date_add(CURDATE(),interval -1 month)))
 	 */
-
+		
+		
+		
 }
