@@ -3,15 +3,20 @@ package com.ysd.statistics.service.impl;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
+import org.apache.poi.hssf.usermodel.HSSFComment;
 import org.apache.poi.hssf.usermodel.HSSFPatriarch;
+import org.apache.poi.hssf.usermodel.HSSFRichTextString;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Comment;
 import org.apache.poi.ss.usermodel.Row;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,7 +107,8 @@ public class StudentsServiceImpl implements StudentsService {
 			row.createCell(0).setCellValue("学生卡号");
 			row.createCell(1).setCellValue("学生姓名");
 			row.createCell(2).setCellValue("学生性别");
-			row.createCell(3).setCellValue("学生学号");
+			row.createCell(3).setCellValue("学生专业信息编号");
+			row.createCell(4).setCellValue("学生学号");
 			row.createCell(4).setCellValue("错误信息");
 			// 设置列宽
 			hssfSheet.setColumnWidth(3, 16 * 256);
@@ -115,8 +121,9 @@ public class StudentsServiceImpl implements StudentsService {
 				rows.createCell(0).setCellValue(errorList.get(i).getStu_cardNO());
 				rows.createCell(1).setCellValue(errorList.get(i).getStu_name());
 				rows.createCell(2).setCellValue(errorList.get(i).getStu_sex());
-				rows.createCell(3).setCellValue(errorList.get(i).getStu_stuNO());
-				rows.createCell(4).setCellValue(errorReasonList.get(i).toString());
+				rows.createCell(3).setCellValue(errorList.get(i).getStu_memberShipId());
+				rows.createCell(4).setCellValue(errorList.get(i).getStu_stuNO());
+				rows.createCell(5).setCellValue(errorReasonList.get(i).toString());
 			}
 			
 			// 获取当前时间
