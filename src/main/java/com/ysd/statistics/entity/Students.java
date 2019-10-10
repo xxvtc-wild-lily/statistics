@@ -20,7 +20,6 @@ public class Students {
 	private String stu_cardNO;
 	private String stu_name;
 	private Integer stu_sex;
-	/* private Integer stu_memberShipId; */
 	private Integer stu_stuNO;
 	private Integer stu_status;
 	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
@@ -56,12 +55,6 @@ public class Students {
 	public void setStu_sex(Integer stu_sex) {
 		this.stu_sex = stu_sex;
 	}
-
-	/*
-	 * public Integer getStu_memberShipId() { return stu_memberShipId; } public void
-	 * setStu_memberShipId(Integer stu_memberShipId) { this.stu_memberShipId =
-	 * stu_memberShipId; }
-	 */
 	public Integer getStu_stuNO() {
 		return stu_stuNO;
 	}
@@ -74,6 +67,15 @@ public class Students {
 	public void setStu_status(Integer stu_status) {
 		this.stu_status = stu_status;
 	}
+<<<<<<< HEAD
 	
+=======
+	@Override
+	public String toString() {
+		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
+				+ stu_sex + ", stu_stuNO=" + stu_stuNO + ", stu_status="
+				+ stu_status + "]";
+	}
+>>>>>>> parent of 94c33dd... Revert "修改配置"
 	
 }
