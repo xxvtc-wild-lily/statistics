@@ -20,7 +20,7 @@ public class Students {
 	private String stu_cardNO;
 	private String stu_name;
 	private Integer stu_sex;
-	/* private Integer stu_memberShipId; */
+	private Integer stu_memberShipId; 
 	private Integer stu_stuNO;
 	private Integer stu_status;
 	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
