@@ -1,8 +1,13 @@
 package com.ysd.statistics.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,14 +15,23 @@ import javax.persistence.Table;
 public class Students {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增
 	private Integer stu_id;
 	private String stu_cardNO;
 	private String stu_name;
 	private Integer stu_sex;
-	private Integer stu_memberShipId;
+	/* private Integer stu_memberShipId; */
 	private Integer stu_stuNO;
 	private Integer stu_status;
+	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="stu_memberShipId",referencedColumnName = "mem_id")
+	private MemberShips memberships;
+	public MemberShips getMemberships() {
+		return memberships;
+	}
+	public void setMemberships(MemberShips memberships) {
+		this.memberships = memberships;
+	}
 	public Integer getStu_id() {
 		return stu_id;
 	}
@@ -42,12 +56,12 @@ public class Students {
 	public void setStu_sex(Integer stu_sex) {
 		this.stu_sex = stu_sex;
 	}
-	public Integer getStu_memberShipId() {
-		return stu_memberShipId;
-	}
-	public void setStu_memberShipId(Integer stu_memberShipId) {
-		this.stu_memberShipId = stu_memberShipId;
-	}
+
+	/*
+	 * public Integer getStu_memberShipId() { return stu_memberShipId; } public void
+	 * setStu_memberShipId(Integer stu_memberShipId) { this.stu_memberShipId =
+	 * stu_memberShipId; }
+	 */
 	public Integer getStu_stuNO() {
 		return stu_stuNO;
 	}
@@ -60,6 +74,11 @@ public class Students {
 	public void setStu_status(Integer stu_status) {
 		this.stu_status = stu_status;
 	}
-	
+	@Override
+	public String toString() {
+		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
+				+ stu_sex + ", stu_memberShipId=" + stu_memberShipId + ", stu_stuNO=" + stu_stuNO + ", stu_status="
+				+ stu_status + "]";
+	}
 	
 }
