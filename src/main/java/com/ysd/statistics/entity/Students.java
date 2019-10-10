@@ -60,6 +60,11 @@ public class Students {
 	public void setStu_status(Integer stu_status) {
 		this.stu_status = stu_status;
 	}
-	
+	@Override
+	public String toString() {
+		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
+				+ stu_sex + ", stu_memberShipId=" + stu_memberShipId + ", stu_stuNO=" + stu_stuNO + ", stu_status="
+				+ stu_status + "]";
+	}
 	
 }
