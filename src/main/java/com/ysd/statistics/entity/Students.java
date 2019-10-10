@@ -68,6 +68,7 @@ public class Students {
 		this.stu_status = stu_status;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 	@Override
@@ -77,5 +78,13 @@ public class Students {
 				+ stu_status + "]";
 	}
 >>>>>>> parent of 94c33dd... Revert "修改配置"
+=======
+	@Override
+	public String toString() {
+		return "Students [stu_id=" + stu_id + ", stu_cardNO=" + stu_cardNO + ", stu_name=" + stu_name + ", stu_sex="
+				+ stu_sex + ", stu_memberShipId=" + stu_memberShipId + ", stu_stuNO=" + stu_stuNO + ", stu_status="
+				+ stu_status + "]";
+	}
+>>>>>>> parent of 338f661... Revert "Merge branch 'GuoLianZheng'"
 	
 }
