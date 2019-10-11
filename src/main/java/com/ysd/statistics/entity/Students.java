@@ -22,7 +22,15 @@ public class Students {
 	private Integer stu_sex;
 	private Integer stu_stuNO;
 	private Integer stu_status;
-	
+	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="stu_memberShipId",referencedColumnName = "mem_id")
+	private MemberShips memberships;
+	public MemberShips getMemberships() {
+		return memberships;
+	}
+	public void setMemberships(MemberShips memberships) {
+		this.memberships = memberships;
+	}
 	public Integer getStu_id() {
 		return stu_id;
 	}
