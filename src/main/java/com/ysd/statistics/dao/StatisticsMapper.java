@@ -44,6 +44,12 @@ public interface StatisticsMapper extends JpaRepository<Statistics,Integer>{
 		 */
 		@Query(value="select st.* from publicplace pu left join statistics st on pu.pub_id=st.sta_public_place_id WHERE st.sta_year=(select year (date_add(CURDATE(),interval -1 month))) and st.sta_month =(select month (date_add(CURDATE(),interval -1 month)))",nativeQuery = true)
 		public List<Statistics> findOneMonthPublicPlaceRecord();
+		/**
+		 * 近30天不同专业图书馆使用的人次
+		 * @return
+		 */
+		@Query(value="select  count(me.mem_department) as `value` ,me.mem_department as `name`  from consumelogs co join students st on co.con_cardno=st.stu_cardno  join memberships me on st.stu_member_ship_id=me.mem_id join publicplace pu on co.con_public_place_id = pu.pub_id where    DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= date(con_in_time)  and  pu.pub_name='图书馆' group by me.mem_department",nativeQuery = true)
+		public List<Map<String,Object>> findRecordStudent();
 		
 		
 }

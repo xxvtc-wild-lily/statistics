@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @SpringBootApplication
 @EntityScan(basePackages = "com.ysd.statistics.entity")
+
 public class StatisticsApplication {
 	
 	public static void main(String[] args) {

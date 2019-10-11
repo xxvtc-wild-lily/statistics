@@ -21,4 +21,9 @@ public interface ConsumeLogsService {
 	 * @return
 	 */
 	public List<Statistics> findOneMonthPublicPlaceRecord();
+	/**
+	 * 近30天不同专业图书馆使用的人次
+	 * @return
+	 */
+	public List<Map<String,Object>> findRecordStudent();
 }
