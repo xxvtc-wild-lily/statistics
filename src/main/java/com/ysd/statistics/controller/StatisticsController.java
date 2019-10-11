@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ysd.statistics.dao.StatisticsMapper;
-import com.ysd.statistics.entity.ConsumeLogs;
-import com.ysd.statistics.entity.DataChaXun;
-import com.ysd.statistics.entity.Students;
+import com.ysd.statistics.entity.Statistics;
 import com.ysd.statistics.service.ConsumeLogsService;
 
 @RestController
@@ -29,6 +26,12 @@ public class StatisticsController {
 	public Object selectOneMonthRecord() {
 		List<Map<String, Object>> findeOneMonthRecord = consumeLogsservice.findeOneMonthRecord();
 		return findeOneMonthRecord;
+		
+	}
+	@RequestMapping(value="onemonthpublicplacerecord",method = RequestMethod.POST)
+	public Object selectOneMonthPublicPlaceRecord() {
+		List<Statistics> findOneMonthPublicPlaceRecord = consumeLogsservice.findOneMonthPublicPlaceRecord();
+		return findOneMonthPublicPlaceRecord;
 		
 	}
 }

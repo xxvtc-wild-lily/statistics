@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ysd.statistics.dao.StatisticsMapper;
 import com.ysd.statistics.entity.ConsumeLogs;
 import com.ysd.statistics.entity.DataChaXun;
+import com.ysd.statistics.entity.Statistics;
 import com.ysd.statistics.entity.Students;
 @Service
 public class ConsumeLogsServiceImpl implements ConsumeLogsService {
@@ -23,6 +24,11 @@ public class ConsumeLogsServiceImpl implements ConsumeLogsService {
 	public List<Map<String, Object>> findeOneMonthRecord() {
 		List<Map<String, Object>> findOneMonthRecord = statisticsmapper.findOneMonthRecord();
 		return findOneMonthRecord;
+	}
+	@Override
+	public List<Statistics> findOneMonthPublicPlaceRecord() {
+		List<Statistics> findOneMonthPublicPlaceRecord = statisticsmapper.findOneMonthPublicPlaceRecord();
+		return findOneMonthPublicPlaceRecord;
 	}
 
 }
