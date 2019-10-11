@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ysd.statistics.entity.Statistics;
 import com.ysd.statistics.service.ConsumeLogsService;
 
 @RestController
@@ -32,6 +33,12 @@ public class StatisticsController {
 	public Object findAllStatisticsById() {
 		
 		return consumeLogsservice;
+	}
+	@RequestMapping(value="onemonthpublicplacerecord",method = RequestMethod.POST)
+	public Object selectOneMonthPublicPlaceRecord() {
+		List<Statistics> findOneMonthPublicPlaceRecord = consumeLogsservice.findOneMonthPublicPlaceRecord();
+		return findOneMonthPublicPlaceRecord;
+		
 	}
 }
 

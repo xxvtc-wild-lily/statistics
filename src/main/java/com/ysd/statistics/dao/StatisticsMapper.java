@@ -11,8 +11,9 @@ import java.util.Map;
 import org.springframework.data.jpa.repository.Query;
 
 import com.ysd.statistics.entity.PublicPlace;
+import com.ysd.statistics.entity.Statistics;
 
-public interface StatisticsMapper extends JpaRepository<PublicPlace,Integer>{
+public interface StatisticsMapper extends JpaRepository<Statistics,Integer>{
 		/**
 		 * 查询不同学历当前在公共场合的人数
 		 * @return
@@ -25,6 +26,7 @@ public interface StatisticsMapper extends JpaRepository<PublicPlace,Integer>{
 		 */
 		@Query(value="select sum(st.sta_people_nums) as `value`,pu.pub_name as `name` from publicplace pu left join statistics st on pu.pub_id=st.sta_public_place_id WHERE st.sta_year=(select year (date_add(CURDATE(),interval -1 month))) and st.sta_month =(select month (date_add(CURDATE(),interval -1 month))) group by pu.pub_name",nativeQuery = true)
 		public List<Map<String,Object>> findOneMonthRecord();
+
 		
 		
 
@@ -35,6 +37,13 @@ public interface StatisticsMapper extends JpaRepository<PublicPlace,Integer>{
 	 * (date_add(CURDATE(),interval -1 month)))
 	 */
 		
+
+		/**
+		 * 上月各资源使用人次变�?
+		 * @return
+		 */
+		@Query(value="select st.* from publicplace pu left join statistics st on pu.pub_id=st.sta_public_place_id WHERE st.sta_year=(select year (date_add(CURDATE(),interval -1 month))) and st.sta_month =(select month (date_add(CURDATE(),interval -1 month)))",nativeQuery = true)
+		public List<Statistics> findOneMonthPublicPlaceRecord();
 		
 		
 }
