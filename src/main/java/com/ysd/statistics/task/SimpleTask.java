@@ -31,7 +31,7 @@ public class SimpleTask {
 	private SimpleDateFormat dateFormat;
 	
 	
-	@Scheduled(cron = "* 30 23 * * ? *")
+	@Scheduled(cron = "* 30 23 * * ? ")
 	public void reportCurrentTimeCron() {
 		Calendar cal=Calendar.getInstance();
 		String year = cal.get(Calendar.YEAR)+"";
