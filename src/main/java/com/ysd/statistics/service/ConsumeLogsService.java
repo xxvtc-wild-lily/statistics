@@ -3,9 +3,7 @@ package com.ysd.statistics.service;
 import java.util.List;
 import java.util.Map;
 
-import com.ysd.statistics.entity.ConsumeLogs;
-import com.ysd.statistics.entity.DataChaXun;
-import com.ysd.statistics.entity.Students;
+import com.ysd.statistics.entity.Statistics;
 
 public interface ConsumeLogsService {
 	/**
@@ -18,4 +16,9 @@ public interface ConsumeLogsService {
 	 * @return
 	 */
 	public List<Map<String,Object>> findeOneMonthRecord();
+	/**
+	 * 上月各资源使用人次变化
+	 * @return
+	 */
+	public List<Statistics> findOneMonthPublicPlaceRecord();
 }
