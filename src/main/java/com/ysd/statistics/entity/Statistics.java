@@ -17,7 +17,7 @@ public class Statistics {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//主键自增
 	private Integer sta_id;
-	private Integer sta_publicPlaceId; 
+	/* private Integer sta_publicPlaceId; */
 	private Integer sta_peopleNums;
 	private String sta_year;
 	private String sta_month;
@@ -40,12 +40,7 @@ public class Statistics {
 	}
 	
 	
-	public Integer getSta_publicPlaceId() {
-		return sta_publicPlaceId;
-	}
-	public void setSta_publicPlaceId(Integer sta_publicPlaceId) {
-		this.sta_publicPlaceId = sta_publicPlaceId;
-	}
+	
 	/*
 	 * public Integer getSta_publicPlaceId() { return sta_publicPlaceId; } public
 	 * void setSta_publicPlaceId(Integer sta_publicPlaceId) { this.sta_publicPlaceId
