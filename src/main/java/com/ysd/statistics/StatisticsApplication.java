@@ -8,7 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableScheduling
 @SpringBootApplication
-@EnableJpaRepositories(basePackages="com.ysd.statistics.dao")//spring jpa启用注解
 @EntityScan(basePackages = "com.ysd.statistics.entity")
 public class StatisticsApplication {
 	
