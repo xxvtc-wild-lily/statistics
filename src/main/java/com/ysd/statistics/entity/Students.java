@@ -25,13 +25,6 @@ public class Students {
 	@ManyToOne(targetEntity=MemberShips.class,cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="stu_memberShipId",referencedColumnName = "mem_id")
 	private MemberShips memberships;
-	
-	public Integer getStu_memberShipId() {
-		return stu_memberShipId;
-	}
-	public void setStu_memberShipId(Integer stu_memberShipId) {
-		this.stu_memberShipId = stu_memberShipId;
-	}
 	public MemberShips getMemberships() {
 		return memberships;
 	}
