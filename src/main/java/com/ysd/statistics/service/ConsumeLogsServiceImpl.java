@@ -30,5 +30,10 @@ public class ConsumeLogsServiceImpl implements ConsumeLogsService {
 		List<Statistics> findOneMonthPublicPlaceRecord = statisticsmapper.findOneMonthPublicPlaceRecord();
 		return findOneMonthPublicPlaceRecord;
 	}
+	@Override
+	public List<Map<String, Object>> findRecordStudent() {
+		List<Map<String, Object>> findRecordStudent = statisticsmapper.findRecordStudent();
+		return findRecordStudent;
+	}
 
 }

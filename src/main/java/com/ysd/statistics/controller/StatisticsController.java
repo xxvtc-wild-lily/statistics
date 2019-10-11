@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,12 @@ public class StatisticsController {
 	public Object selectOneMonthPublicPlaceRecord() {
 		List<Statistics> findOneMonthPublicPlaceRecord = consumeLogsservice.findOneMonthPublicPlaceRecord();
 		return findOneMonthPublicPlaceRecord;
+		
+	}
+	@PostMapping(value="recordstudent")
+	public Object selectRecordStudent() {
+		List<Map<String, Object>> findRecordStudent = consumeLogsservice.findRecordStudent();
+		return findRecordStudent;
 		
 	}
 }
