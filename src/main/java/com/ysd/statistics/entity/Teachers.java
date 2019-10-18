@@ -75,6 +75,12 @@ public class Teachers {
 	public void setTea_remark(String tea_remark) {
 		this.tea_remark = tea_remark;
 	}
+	@Override
+	public String toString() {
+		return "Teachers [tea_id=" + tea_id + ", tea_cardNO=" + tea_cardNO + ", tea_name=" + tea_name + ", tea_sex="
+				+ tea_sex + ", tea_status=" + tea_status + ", tea_remark=" + tea_remark + ", sections=" + sections
+				+ "]";
+	}
 	
 	
 }
