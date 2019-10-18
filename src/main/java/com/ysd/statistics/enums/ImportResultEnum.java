@@ -13,6 +13,10 @@ public enum ImportResultEnum {
 	
 	STU_SEX_ERROR(3, "学生性别不正确"),
 	
+	TEA_CARDNO_ISEXISTS(4, "教师卡号已存在"),
+	
+	TEA_SEX_ERROR(5, "教师性别不正确"),
+	
     ;
     
     private Integer code;

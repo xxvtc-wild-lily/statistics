@@ -60,11 +60,11 @@ public class StudentsServiceImpl implements StudentsService {
 			Students students = new Students();
 			
 			// 判断学号是否存在
-			if (studentsRepository.findByStuNO(studentsList.get(i).getStu_stuNO()) == null) {
+			if (studentsRepository.findByStuNO(String.valueOf(studentsList.get(i).getStu_stuNO())) == null) {
 				// 判断卡号是否存在
-				if (studentsRepository.findByStuCardNO(Integer.parseInt(studentsList.get(i).getStu_cardNO())) == null) {
+				if (studentsRepository.findByStuCardNO(studentsList.get(i).getStu_cardNO()) == null) {
 					// 判断性别是否正确
-					System.out.println(studentsList.get(i).getStu_sex());
+					
 					if (studentsList.get(i).getStu_sex() == 1 || studentsList.get(i).getStu_sex() == 0) {
 						BeanUtils.copyProperties(studentsList.get(i), students);
 						Students stu = studentsRepository.save(students);
